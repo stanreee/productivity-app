@@ -1,0 +1,92 @@
+FOR HOME
+
+Widget newBody() {
+    return PageView.builder(
+        itemCount: activityList.length,
+        controller: PageController(viewportFraction: 0.8),
+        itemBuilder: (context, index) {
+          return Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                child: InkWell(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 80.0),
+                    child: Container(
+                      child: Column(
+                        children: <Widget>[
+                          Expanded(
+                            flex: 9,
+                            child: Column(
+                              children: <Widget>[
+                                SizedBox(height: 100.0),
+                                Text(
+                                  '${activityList[index].activityName}',
+                                  style: TextStyle(
+                                    fontSize: 48,
+                                  ),
+                                  ),
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: Row(
+                              children: <Widget>[
+                                Expanded(
+                                  flex: 1,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: <Widget>[
+                                      FloatingActionButton(
+                                        heroTag: null,
+                                        child: Icon(Icons.edit),
+                                        onPressed: () {},
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(Radius.circular(16.0)),
+                      ),
+                    ),
+                  ),
+                  onTap: () async {
+                      dynamic result = await Navigator.push(context, MaterialPageRoute(builder: (context) => ActivityWidget(activity: activityList[index])));
+                  },
+                ),
+              );
+        }
+      );
+  }
+
+  Widget _carousel(context, index) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        Text('idk'),
+        SizedBox(
+          height: 200.0,
+          child: PageView.builder(
+            controller: PageController(viewportFraction: 0.8),
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: EdgeInsets.symmetric(horizontal: 4.0),
+                child: Container(
+                  child: Text('${activityList[index].activityName}'),
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.all(Radius.circular(4.0)),
+                  ),
+                ),
+              );
+            }
+          ),
+        ),
+      ],
+    );
+  }

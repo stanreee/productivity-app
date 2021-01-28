@@ -1,0 +1,33 @@
+features:
+
+- you can make multiple different kinds of activities
+    - i.e. an activity for playing piano, programming, doing homework, studying, etc.
+
+        - for each activity you set a certain length of time that you don't want to be interrupted for
+
+- if you want to start a certain activity, you simply tap that activity then start the timer for that specific activity, and you will no longer receive notifications
+depending how long the timer is for that specific activity
+
+- at the end of the length of time, it gives you a summary of how long you were distracted for
+    - distractions are automatically recorded (if you use your phone, that counts as a distraction)
+
+    - it also tells you how long you were distracted for in comparison to the average time you usually get distracted for on this specific activity
+
+
+
+TODO list:
+
+    - make home page -DONE-
+        - home page consists of cards of each activity to choose from -DONE-
+    - set up Activity framework (duration, name) -NOT DONE-
+    - set up add activity function -DONE-
+        - takes you to a new page -DONE-
+
+
+
+    - set up activity start function -SEMI DONE-
+        - takes in an Activity object (which includes the duration and the name) -DONE-
+        -> ALSO ADD A 'BREAK' FEATURE; every couple minutes give the user a break (intervals for breaks can be configured by the user)
+
+    
+
